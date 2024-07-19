@@ -5,8 +5,7 @@ body {
     padding: 0;
     background-color: #f5f5f5;
     color: #333;
-    /* Ensure there's enough padding at the bottom of the body to accommodate the footer */
-    padding-bottom: 60px; /* Adjust based on the height of your footer */
+    padding-bottom: 60px; /* Ensure enough padding at the bottom to accommodate the footer */
 }
 
 header {
@@ -21,15 +20,11 @@ main {
     padding: 20px;
     max-width: 900px;
     margin: 0 auto;
-    /* Ensure there's extra space below the main content */
-    padding-bottom: 80px; /* Adjust based on the height of your footer */
+    padding-bottom: 80px; /* Ensure extra space below the main content */
 }
 
 /* Section Styles */
-.info-section, 
-.join-section, 
-.application-section, 
-.add-pictures-section {
+section {
     background: #fff;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -38,10 +33,7 @@ main {
     transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
-.info-section:hover, 
-.join-section:hover, 
-.application-section:hover, 
-.add-pictures-section:hover {
+section:hover {
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
     transform: translateY(-5px);
 }

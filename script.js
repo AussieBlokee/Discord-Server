@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     console.log('ProfilePicturesPLUS website loaded');
 
-    // Add event listener to button
+    // Initialize button events
     initializeButtonEvents();
 });
 
@@ -9,11 +9,11 @@ document.addEventListener('DOMContentLoaded', () => {
  * Initializes event listeners for buttons on the page.
  */
 function initializeButtonEvents() {
-    const joinButton = document.querySelector('.button');
+    const buttons = document.querySelectorAll('.button');
     
-    if (joinButton) {
-        joinButton.addEventListener('click', handleButtonClick);
-    }
+    buttons.forEach(button => {
+        button.addEventListener('click', handleButtonClick);
+    });
 }
 
 /**
@@ -21,5 +21,7 @@ function initializeButtonEvents() {
  * @param {Event} event - The click event.
  */
 function handleButtonClick(event) {
-    alert('Button clicked!');
+    // Proceed to the link directly
+    const targetUrl = event.currentTarget.getAttribute('href');
+    window.open(targetUrl, '_blank');
 }
