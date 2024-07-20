@@ -3,29 +3,49 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f5f5f5;
+    background-color: #6495ED;
     color: #333;
-    padding-bottom: 60px; /* Ensure enough padding at the bottom to accommodate the footer */
+    padding-bottom: 60px; /* Space for footer */
 }
 
 header {
     background: linear-gradient(135deg, #2c3e50, #34495e);
-    color: #ecf0f1;
+    color: #F39C12;
     padding: 20px 0;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.sticky-nav {
+    position: -webkit-sticky; /* For Safari */
+    position: sticky;
+    top: 0;
+    background: #454545;
+    padding: 10px;
+    z-index: 1000;
+}
+
+.nav-link {
+    color: #F39C12;
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 700;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
 }
 
 main {
     padding: 20px;
     max-width: 900px;
     margin: 0 auto;
-    padding-bottom: 80px; /* Ensure extra space below the main content */
+    padding-bottom: 80px; /* Extra space for footer */
 }
 
 /* Section Styles */
 section {
-    background: #fff;
+    background: #A9CCE3;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     padding: 20px;
@@ -36,6 +56,19 @@ section {
 section:hover {
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
     transform: translateY(-5px);
+}
+
+/* Image Container Styles */
+.image-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.section-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid #ddd;
 }
 
 /* Typography */
@@ -59,15 +92,16 @@ p {
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
 
 .button:hover {
-    background-color: #2980b9;
+    background-color: #F39C12;
     transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
 }
 
 .button:focus {
@@ -94,4 +128,34 @@ footer {
         width: 100%;
         text-align: center;
     }
+
+    .nav-link {
+        display: block;
+        padding: 10px;
+        text-align: center;
+    }
+}
+
+/* Accordion Styles */
+.accordion-button {
+    background: #3498db;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    border: none;
+    text-align: left;
+    font-size: 16px;
+    outline: none;
+    width: 100%;
+    text-align: left;
+}
+
+.accordion-content {
+    display: none;
+    padding: 10px;
+    background: #f1f1f1;
+}
+
+.accordion-button.active + .accordion-content {
+    display: block;
 }

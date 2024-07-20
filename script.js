@@ -1,27 +1,43 @@
 document.addEventListener('DOMContentLoaded', () => {
     console.log('ProfilePicturesPLUS website loaded');
 
-    // Initialize button events
-    initializeButtonEvents();
+    // Initialize button click events
+    setupButtonEventListeners();
+
+    // Initialize accordion panels if needed
+    setupAccordionPanels();
 });
 
 /**
- * Initializes event listeners for buttons on the page.
+ * Sets up event listeners for all buttons on the page.
  */
-function initializeButtonEvents() {
+function setupButtonEventListeners() {
     const buttons = document.querySelectorAll('.button');
     
     buttons.forEach(button => {
-        button.addEventListener('click', handleButtonClick);
+        button.addEventListener('click', openLinkInNewTab);
     });
 }
 
 /**
- * Handles button click events.
+ * Opens the link from the button's href attribute in a new tab.
  * @param {Event} event - The click event.
  */
-function handleButtonClick(event) {
-    // Proceed to the link directly
+function openLinkInNewTab(event) {
+    event.preventDefault(); // Prevent default link behavior
     const targetUrl = event.currentTarget.getAttribute('href');
     window.open(targetUrl, '_blank');
+}
+
+/**
+ * Sets up event listeners for accordion panels.
+ */
+function setupAccordionPanels() {
+    document.querySelectorAll('.accordion-button').forEach(button => {
+        button.addEventListener('click', () => {
+            button.classList.toggle('active');
+            const content = button.nextElementSibling;
+            content.style.display = content.style.display === 'block' ? 'none' : 'block';
+        });
+    });
 }
