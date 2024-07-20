@@ -23,6 +23,9 @@ header {
     background: #454545;
     padding: 10px;
     z-index: 1000;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
 }
 
 .nav-link {
@@ -30,10 +33,12 @@ header {
     text-decoration: none;
     padding: 10px;
     font-weight: 700;
+    transition: color 0.3s ease;
 }
 
 .nav-link:hover {
     text-decoration: underline;
+    color: #ecf0f1;
 }
 
 main {
@@ -69,6 +74,11 @@ section:hover {
     height: auto;
     border-radius: 8px;
     border: 1px solid #ddd;
+    transition: transform 0.3s ease;
+}
+
+.section-image:hover {
+    transform: scale(1.05);
 }
 
 /* Typography */
@@ -76,6 +86,8 @@ h2 {
     font-size: 1.6em;
     margin-bottom: 15px;
     color: #2c3e50;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 5px;
 }
 
 p {
@@ -119,6 +131,38 @@ footer {
     width: 100%;
     bottom: 0;
     box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Unified Border Container Styles */
+.owners-container {
+    background: #f2f6fc;
+    border: 2px solid #3498db;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.owners-container h2 {
+    font-size: 1.4em;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 5px;
+}
+
+.owners-container p, .owners-container ul {
+    font-size: 1.1em;
+    color: #555;
+}
+
+.owners-container ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.owners-container ul li {
+    margin-bottom: 10px;
 }
 
 /* Responsive Design */
